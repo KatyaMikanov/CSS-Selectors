@@ -1,0 +1,483 @@
+body {
+    background-color: rgb(48, 47, 47);
+}
+
+.wrapper {
+    display: flex;
+    width: 1280px;
+    justify-content: space-between;
+    margin: auto;
+}
+
+@keyframes animationPlate {
+    from { opacity: 1.0; }
+    to { opacity: 0.7; }
+}
+
+.wrapperForBlocks1_3 {
+    width: 75%;
+}
+
+.block1 {
+    border: solid 1px rgb(75 74 74);
+    height: 200px;
+    font-size: 20px;
+    color: rgb(41, 242, 58);
+    padding: 10px;
+    margin-bottom: 10px;
+}
+
+/* level 1 */
+.block1ForLevel1 {
+    display: block;
+}
+.block1ForLevel1NoVisible {
+    display: none;
+}
+
+.tableLevel1 {
+    width: 300px;
+    height: 150px;
+    display: block;
+    margin: 0 auto;
+    padding-top: 45px;
+}
+
+.plateLevel1 {
+    width: 100px;
+    height: 50px;
+    position: relative;
+    bottom: 150px;
+    left: 415px;
+}
+
+.plateLevel1 {
+    animation-name: animationPlate;
+    animation-iteration-count: infinite;
+    animation-timing-function: cubic-bezier(1.0,0,0,1.0);
+    animation-duration: 1s;
+}
+
+
+/* level 2 */
+.block1ForLevel2 {
+    display: none;
+}
+
+
+.plateLevel2 {
+    width: 100px;
+    height: 50px;
+    position: relative;
+    bottom: 160px;
+    left: 315px;
+}
+.plateLevel2 {
+    animation-name: animationPlate;
+    animation-iteration-count: infinite;
+    animation-timing-function: cubic-bezier(1.0,0,0,1.0);
+    animation-duration: 1s;
+}
+
+/* level 3 */
+.block1ForLevel3 {
+    display: none;
+}
+
+.appleLevel3 {
+    width: 60px;
+    height: 50px;
+    position: relative;
+    bottom: 165px;
+    left: 390px;
+}
+.appleLevel3 {
+    animation-name: animationPlate;
+    animation-iteration-count: infinite;
+    animation-timing-function: cubic-bezier(1.0,0,0,1.0);
+    animation-duration: 1s;
+}
+.plateLevel3 {
+    width: 100px;
+    height: 50px;
+    position: relative;
+    bottom: 155px;
+    left: 370px;
+}
+
+/* level 4 */
+.block1ForLevel4 {
+    display: none;
+}
+
+.appleLevel4 {
+    width: 60px;
+    height: 50px;
+    position: relative;
+    bottom: 173px;
+    left: 339px;
+}
+.appleLevel4 {
+    animation-name: animationPlate;
+    animation-iteration-count: infinite;
+    animation-timing-function: cubic-bezier(1.0,0,0,1.0);
+    animation-duration: 1s;
+}
+.plateLevel4 {
+    width: 100px;
+    height: 50px;
+    position: relative;
+    bottom: 150px;
+    left: 415px;
+}
+
+/* level 5 */
+.block1ForLevel5 {
+    display: none;
+}
+
+.appleLevel5 {
+    width: 60px;
+    height: 50px;
+    position: relative;
+    bottom: 173px;
+    left: 339px;
+}
+
+/* level 6 */
+.block1ForLevel6 {
+    display: none;
+}
+
+.plateLevel6 {
+    width: 100px;
+    height: 50px;
+    position: relative;
+    bottom: 150px;
+    left: 380px;
+}
+
+.appleLevel6 {
+    width: 60px;
+    height: 50px;
+    position: relative;
+    bottom: 173px;
+    left: 300px;
+}
+
+.pearLevel6 {
+    width: 50px;
+    height: 50px;
+    position: relative;
+    bottom: 165px;
+    left: 340px;
+}
+.pearLevel6 {
+    animation-name: animationPlate;
+    animation-iteration-count: infinite;
+    animation-timing-function: cubic-bezier(1.0,0,0,1.0);
+    animation-duration: 1s;
+}
+
+/* level 7 */
+.block1ForLevel7 {
+    display: none;
+}
+
+.plate2Level7 {
+    width: 100px;
+    height: 50px;
+    position: relative;
+    bottom: 150px;
+    left: 330px;
+}
+
+.pearLevel7 {
+    width: 50px;
+    height: 50px;
+    position: relative;
+    bottom: 170px;
+    left: 255px;
+}
+
+.plateLevel7 {
+    width: 100px;
+    height: 50px;
+    position: relative;
+    bottom: 150px;
+    left: 370px;
+}
+
+.appleLevel7 {
+    width: 50px;
+    height: 50px;
+    position: relative;
+    bottom: 170px;
+    left: 295px;
+}
+.appleLevel7 {
+    animation-name: animationPlate;
+    animation-iteration-count: infinite;
+    animation-timing-function: cubic-bezier(1.0,0,0,1.0);
+    animation-duration: 1s;
+}
+
+/* level 8 */
+.block1ForLevel8 {
+    display: none;
+}
+
+.pearLevel8 {
+    width: 50px;
+    height: 50px;
+    position: relative;
+    bottom: 170px;
+    left: 255px;
+}
+.pearLevel8 {
+    animation-name: animationPlate;
+    animation-iteration-count: infinite;
+    animation-timing-function: cubic-bezier(1.0,0,0,1.0);
+    animation-duration: 1s;
+}
+.appleLevel8 {
+    width: 50px;
+    height: 50px;
+    position: relative;
+    bottom: 170px;
+    left: 295px;
+}
+
+
+/* level 9 */
+.block1ForLevel9 {
+    display: none;
+}
+
+.pearLevel9 {
+    width: 50px;
+    height: 50px;
+    position: relative;
+    bottom: 170px;
+    left: 255px;
+}
+.pearLevel9 {
+    animation-name: animationPlate;
+    animation-iteration-count: infinite;
+    animation-timing-function: cubic-bezier(1.0,0,0,1.0);
+    animation-duration: 1s;
+}
+
+.appleLevel9 {
+    width: 50px;
+    height: 50px;
+    position: relative;
+    bottom: 170px;
+    left: 295px;
+}
+.appleLevel9 {
+    animation-name: animationPlate;
+    animation-iteration-count: infinite;
+    animation-timing-function: cubic-bezier(1.0,0,0,1.0);
+    animation-duration: 1s;
+}
+
+/* level 10 */
+.block1ForLevel10 {
+    display: none;
+}
+
+.plate2Level10 {
+    width: 100px;
+    height: 50px;
+    position: relative;
+    bottom: 150px;
+    left: 380px;
+}
+
+.plate2Level10 {
+    animation-name: animationPlate;
+    animation-iteration-count: infinite;
+    animation-timing-function: cubic-bezier(1.0,0,0,1.0);
+    animation-duration: 1s;
+}
+
+.pearLevel10 {
+    width: 50px;
+    height: 50px;
+    position: relative;
+    bottom: 170px;
+    left: 305px;
+}
+
+
+
+/* FOR ALL LEVELS */
+.block1ForLevelVisible {
+    display: block;
+}
+
+.h1 {
+    font-size: 24px;
+    color: rgb(179, 180, 179);
+}
+
+.wrapperForBlocks2_3 {
+    background-color: rgb(34, 34, 34);
+    display: flex;
+    border: solid 1px rgb(75 74 74);
+}
+
+.block2 {
+    width: 50%;
+}
+
+.block2Form {
+    display: flex;
+    justify-content: space-between;
+    background-color: aliceblue;
+}
+
+.blockWithNumbers {
+    font-size: 16px;
+    line-height: 22px;
+    margin: 0;
+    padding: 13px;
+}
+
+.block2WithNumbers {
+    background-color: rgb(226 226 226);
+    color: #77736d;
+}
+
+.input {
+    display: block;
+    width: 80%;
+    height: 30px;
+    background-color: rgb(207 231 238);
+    margin: 7px 15px 0 10px;
+    border: none;
+}
+.input {
+    animation-name: animationPlate;
+    animation-iteration-count: infinite;
+    animation-timing-function: cubic-bezier(1.0,0,0,1.0);
+    animation-duration: 0.5s;
+}
+
+.button {
+    height: 30px;
+    margin: 7px 5px 0;
+    box-shadow: 4px 4px 4px #a4a4a4;
+}
+.button:hover {
+    cursor: pointer;
+}
+
+.titleBlock {
+    display: flex;
+    justify-content: space-between;
+    background-color: rgb(48, 47, 47);
+    padding: 0 10px;
+}
+.titleBlock2 {
+    border-bottom: solid 2px rgb(75 74 74);
+}
+.titleBlock3 {
+    border-bottom: solid 2px rgb(75 74 74);
+}
+
+.titleSection2 {
+    font-size: 16px;
+    color: rgb(179, 180, 179);
+}
+
+.block3 {
+    font-size: 20px;
+    color: rgb(41, 242, 58);
+    width: 50%;
+}
+
+.wrapperForNumbersAndCode {
+    color: #77736d;
+    display: flex;
+}
+
+.block3WithNumbers {
+    background-color: rgb(226 226 226);
+    color: #77736d;
+    border-right: solid 0.5px;
+    width: 4%;
+}
+
+.preCodeLevel1 {
+    margin: 0;
+    padding: 10px;
+    font-size: 18px;
+}
+
+.preCodeLevel1NoVisible {
+    display: none;
+}
+
+.preCode {
+    display: none;
+    margin: 0;
+    padding: 10px;
+    font-size: 18px;
+}
+
+.preCodeVisible {
+    display: block;
+    margin: 0;
+    padding: 10px;
+    font-size: 18px;
+}
+
+.block4 {
+    width: 18%;
+    background-color: rgb(34, 34, 34);
+    font-size: 24px;
+    color: rgb(179, 180, 179);
+    padding: 60px 20px 0 20px;
+}
+
+.levelsP {
+    font-size: 18px;
+    line-height: 22px;
+    padding: 15px 25px 10px 10px;
+    margin: 3px 0;
+}
+.levelsP:hover {
+    background-color: #a4a4a4;
+    color: #77736d;
+    cursor: pointer;
+}
+
+.buttonBlock4 {
+    padding: 10px 20px;
+    background: rgb(34, 34, 34);
+    color: rgb(179, 180, 179);
+    margin-top: 30px;
+}
+.buttonBlock4:hover {
+    cursor: pointer;
+}
+
+.curr {
+    color: rgb(34, 34, 34);;
+    background-color: #a4a4a4;
+}
+
+.green {
+    color: green;
+    font-size: 28px;
+    font-weight: bold;
+    background-color: rgb(34, 34, 34);
+}
+
+.red {
+    color: red;
+    font-size: 28px;
+    background-color: rgb(34, 34, 34);
+}
