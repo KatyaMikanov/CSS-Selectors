@@ -1,1 +1,0 @@
-(()=>{"use strict";newElement({tag:"h1",params:{classList:["h1"],textContent:"CSS Diner"},parent:wrapperForBlocks1_3})})();

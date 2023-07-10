@@ -65,3 +65,247 @@ body {
     color: rgb(179, 180, 179);
     margin-top: 30px;
 }
+
+@keyframes animationPlate {
+    from { opacity: 1.0; }
+    to { opacity: 0.7; }
+}
+
+/* LEVEL 1 */
+
+.tableLevel1 {
+    width: 300px;
+    height: 150px;
+    display: block;
+    margin: 0 auto;
+    padding-top: 45px;
+}
+
+.plateLevel1 {
+    width: 100px;
+    height: 50px;
+    position: relative;
+    bottom: 150px;
+    left: 430px;
+}
+
+.plateLevel1 {
+    animation-name: animationPlate;
+    animation-iteration-count: infinite;
+    animation-timing-function: cubic-bezier(1.0,0,0,1.0);
+    animation-duration: 1s;
+}
+
+/* LEVEL 2 */
+.plateLevel2 {
+    width: 100px;
+    height: 50px;
+    position: relative;
+    bottom: 160px;
+    left: 330px;
+}
+.plateLevel2 {
+    animation-name: animationPlate;
+    animation-iteration-count: infinite;
+    animation-timing-function: cubic-bezier(1.0,0,0,1.0);
+    animation-duration: 1s;
+}
+
+/* LEVEL 3 */
+.appleLevel3 {
+    width: 60px;
+    height: 50px;
+    position: relative;
+    bottom: 165px;
+    left: 400px;
+}
+.appleLevel3 {
+    animation-name: animationPlate;
+    animation-iteration-count: infinite;
+    animation-timing-function: cubic-bezier(1.0,0,0,1.0);
+    animation-duration: 1s;
+}
+.plateLevel3 {
+    width: 100px;
+    height: 50px;
+    position: relative;
+    bottom: 155px;
+    left: 380px;
+}
+
+/* LEVEL 4 */
+.appleLevel4 {
+    width: 60px;
+    height: 50px;
+    position: relative;
+    bottom: 173px;
+    left: 350px;
+}
+.appleLevel4 {
+    animation-name: animationPlate;
+    animation-iteration-count: infinite;
+    animation-timing-function: cubic-bezier(1.0,0,0,1.0);
+    animation-duration: 1s;
+}
+.plateLevel4 {
+    width: 100px;
+    height: 50px;
+    position: relative;
+    bottom: 150px;
+    left: 430px;
+}
+
+/* LEVEL 5 */
+.appleLevel5 {
+    width: 60px;
+    height: 50px;
+    position: relative;
+    bottom: 173px;
+    left: 350px;
+}
+
+/* LEVEL 6 */
+.plateLevel6 {
+    width: 100px;
+    height: 50px;
+    position: relative;
+    bottom: 150px;
+    left: 390px;
+}
+
+.appleLevel6 {
+    width: 60px;
+    height: 50px;
+    position: relative;
+    bottom: 173px;
+    left: 310px;
+}
+
+.pearLevel6 {
+    width: 50px;
+    height: 50px;
+    position: relative;
+    bottom: 165px;
+    left: 350px;
+}
+.pearLevel6 {
+    animation-name: animationPlate;
+    animation-iteration-count: infinite;
+    animation-timing-function: cubic-bezier(1.0,0,0,1.0);
+    animation-duration: 1s;
+}
+
+/* LEVEL 7 */
+.plate2Level7 {
+    width: 100px;
+    height: 50px;
+    position: relative;
+    bottom: 150px;
+    left: 330px;
+}
+
+.pearLevel7 {
+    width: 50px;
+    height: 50px;
+    position: relative;
+    bottom: 170px;
+    left: 255px;
+}
+
+.plateLevel7 {
+    width: 100px;
+    height: 50px;
+    position: relative;
+    bottom: 150px;
+    left: 370px;
+}
+
+.appleLevel7 {
+    width: 50px;
+    height: 50px;
+    position: relative;
+    bottom: 170px;
+    left: 295px;
+}
+.appleLevel7 {
+    animation-name: animationPlate;
+    animation-iteration-count: infinite;
+    animation-timing-function: cubic-bezier(1.0,0,0,1.0);
+    animation-duration: 1s;
+}
+
+/* LEVEL 8 */
+.pearLevel8 {
+    width: 50px;
+    height: 50px;
+    position: relative;
+    bottom: 170px;
+    left: 255px;
+}
+.pearLevel8 {
+    animation-name: animationPlate;
+    animation-iteration-count: infinite;
+    animation-timing-function: cubic-bezier(1.0,0,0,1.0);
+    animation-duration: 1s;
+}
+.appleLevel8 {
+    width: 50px;
+    height: 50px;
+    position: relative;
+    bottom: 170px;
+    left: 295px;
+}
+
+/* LEVEL 9 */
+.pearLevel9 {
+    width: 50px;
+    height: 50px;
+    position: relative;
+    bottom: 170px;
+    left: 255px;
+}
+.pearLevel9 {
+    animation-name: animationPlate;
+    animation-iteration-count: infinite;
+    animation-timing-function: cubic-bezier(1.0,0,0,1.0);
+    animation-duration: 1s;
+}
+
+.appleLevel9 {
+    width: 50px;
+    height: 50px;
+    position: relative;
+    bottom: 170px;
+    left: 295px;
+}
+.appleLevel9 {
+    animation-name: animationPlate;
+    animation-iteration-count: infinite;
+    animation-timing-function: cubic-bezier(1.0,0,0,1.0);
+    animation-duration: 1s;
+}
+
+/* LEVEL 10 */
+.plate2Level10 {
+    width: 100px;
+    height: 50px;
+    position: relative;
+    bottom: 150px;
+    left: 380px;
+}
+
+.plate2Level10 {
+    animation-name: animationPlate;
+    animation-iteration-count: infinite;
+    animation-timing-function: cubic-bezier(1.0,0,0,1.0);
+    animation-duration: 1s;
+}
+
+.pearLevel10 {
+    width: 50px;
+    height: 50px;
+    position: relative;
+    bottom: 170px;
+    left: 305px;
+}
+
