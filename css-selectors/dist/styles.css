@@ -309,3 +309,56 @@ body {
     left: 305px;
 }
 
+
+/* Block 3 */
+.titleBlock {
+    display: flex;
+    justify-content: space-between;
+    background-color: rgb(48, 47, 47);
+    padding: 0 10px;
+}
+
+.titleBlock3 {
+    border-bottom: solid 2px rgb(75 74 74);
+}
+
+.titleSection2 {
+    font-size: 16px;
+    color: rgb(179, 180, 179);
+}
+
+.wrapperForNumbersAndCode {
+    color: #77736d;
+    display: flex;
+}
+
+.blockWithNumbers {
+    font-size: 16px;
+    line-height: 22px;
+    margin: 0;
+    padding: 13px;
+}
+
+.block3WithNumbers {
+    background-color: rgb(226 226 226);
+    color: #77736d;
+    border-right: solid 0.5px;
+    width: 4%;
+}
+
+.code {
+    margin: 0;
+    padding: 10px;
+    font-size: 18px;
+    display: inline-flex;
+}
+
+.block_2 {
+    width: 50%;
+}
+
+.block_3 {
+    font-size: 20px;
+    color: rgb(41, 242, 58);
+    width: 50%;
+}
