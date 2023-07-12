@@ -46,6 +46,12 @@ body {
     padding: 60px 20px 20px 20px;
 }
 
+.selected {
+    background-color: #77736d;
+}
+
+
+
 .levelsP {
     font-size: 18px;
     line-height: 22px;
@@ -409,4 +415,17 @@ body {
     height: 30px;
     margin: 7px 5px 0;
     box-shadow: 4px 4px 4px #a4a4a4;
+}
+
+.green {
+    color: green;
+    font-size: 28px;
+    font-weight: bold;
+    background-color: rgb(34, 34, 34);
+}
+
+.red {
+    color: red;
+    font-size: 28px;
+    background-color: rgb(34, 34, 34);
 }

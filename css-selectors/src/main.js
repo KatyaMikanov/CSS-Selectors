@@ -1,3 +1,117 @@
+const levelKey = "level";
+
+const levelHandler = (nextLevel) => {
+  const block1 = document.querySelector(".block_1");
+  const block3Code = document.querySelector(".code");
+  const currentLevelElement = document.getElementById(`level_${nextLevel}`);
+
+  //currentLevelElement.innerHTML = "selected " + nextLevel;
+  currentLevelElement.classList.add("selected");
+  const block4All = document.querySelector(".block4");
+  for (const child of block4All.children) {
+    if (nextLevel !== child.innerHTML.slice(-1)) {
+      child.classList.remove("selected");
+    }
+  }
+
+  switch (nextLevel) {
+    case "1":
+      block1.innerHTML = firstLevelData.tableView;
+      block3Code.textContent = firstLevelData.htmlViewerContent;
+      break;
+    case "2":
+      block1.innerHTML = secondLevelData.tableView;
+      block3Code.textContent = secondLevelData.htmlViewerContent;
+      break;
+    case "3":
+      block1.innerHTML = thirdLevelData.tableView;
+      block3Code.textContent = thirdLevelData.htmlViewerContent;
+      break;
+    case "4":
+      block1.innerHTML = forthLevelData.tableView;
+      block3Code.textContent = forthLevelData.htmlViewerContent;
+      break;
+    case "5":
+      block1.innerHTML = fifthLevelData.tableView;
+      block3Code.textContent = fifthLevelData.htmlViewerContent;
+      break;
+    case "6":
+      block1.innerHTML = sixthLevelData.tableView;
+      block3Code.textContent = sixthLevelData.htmlViewerContent;
+      break;
+    case "7":
+      block1.innerHTML = seventhLevelData.tableView;
+      block3Code.textContent = seventhLevelData.htmlViewerContent;
+      break;
+    case "8":
+      block1.innerHTML = eighthLevelData.tableView;
+      block3Code.textContent = eighthLevelData.htmlViewerContent;
+      break;
+    case "9":
+      block1.innerHTML = ninthLevelData.tableView;
+      block3Code.textContent = ninthLevelData.htmlViewerContent;
+      break;
+    case "10":
+      block1.innerHTML = tenthLevelData.tableView;
+      block3Code.textContent = tenthLevelData.htmlViewerContent;
+      break;
+  }
+};
+
+const clickLevelListener = () => {
+  const wrapperForBlock4 = document.querySelector(".block4");
+
+  wrapperForBlock4.addEventListener("click", function (e) {
+    let currentLevel = e.target;
+    let numberCurrLevel = currentLevel.textContent.slice(
+      3,
+      currentLevel.length
+    );
+    sessionStorage.setItem(levelKey, numberCurrLevel);
+    levelHandler(numberCurrLevel);
+  });
+};
+
+//correct answers
+const selectors = [
+  "plate",
+  "plate",
+  "apple",
+  ".apple",
+  "#plate",
+  ".pear",
+  ".apple",
+  "#pear",
+  ".fruits",
+  "#plate-second",
+];
+
+const clickEnterListener = () => {
+  const enterButton = document.getElementById("enter_button");
+  enterButton.addEventListener("click", () => {
+    const currentNumberLevel = sessionStorage.getItem(levelKey);
+    const currentLevel = document.getElementById(`level_${currentNumberLevel}`);
+    const input = document.querySelector(".input");
+    if (input.value === selectors[currentNumberLevel - 1]) {
+      currentLevel.classList.remove("red");
+      currentLevel.classList.add("green");
+      input.value = "";
+    } else {
+      currentLevel.classList.remove("green");
+      currentLevel.classList.add("red");
+      input.value = "";
+    }
+  });
+};
+
+sessionStorage.setItem(levelKey, "1");
+window.addEventListener("DOMContentLoaded", (event) => {
+  const level = sessionStorage.getItem(levelKey);
+  levelHandler(level);
+  clickLevelListener();
+  clickEnterListener();
+});
+
 //function for creating DOM element
 export function newElement(options) {
   const el = document.createElement(options.tag);
@@ -15,13 +129,15 @@ export function newElement(options) {
 }
 
 //CREATING wrapper for Block_4
-export const wrapper = document.querySelector(".wrapper");
-export let block4 = newElement({
-  tag: "div",
-  params: { classList: ["block4"], textContent: "Level" },
-  parent: wrapper,
-});
 
+// export const wrapper = document.querySelector(".wrapper");
+// export let block4 = newElement({
+//   tag: "div",
+//   params: { classList: ["block4"], textContent: "Level" },
+//   parent: wrapper,
+// });
+
+const block4 = document.querySelector(".block4");
 //create 10 levels in Block_4
 function getArr() {
   const newArr = new Array(10).fill();
@@ -31,6 +147,7 @@ function getArr() {
       params: {
         classList: ["levelsP"],
         innerHTML: `&#x2713  ${index + 1}`,
+        id: `level_${index + 1}`,
       },
       parent: block4,
     })
@@ -44,65 +161,6 @@ export let buttonBlock4 = newElement({
   params: { classList: ["buttonBlock4"], textContent: "Reset Progress" },
   parent: block4,
 });
-
-//function choose Level
-export function clickLevel() {
-  const wrapperForBlock4 = document.querySelector(".block4");
-  const block1 = document.querySelector(".block_1");
-  const block3Code = document.querySelector(".code");
-
-  wrapperForBlock4.addEventListener("click", function (e) {
-    let currentLevel = e.target;
-    let numberCurrLevel = currentLevel.textContent.slice(
-      3,
-      currentLevel.length
-    );
-
-    switch (numberCurrLevel) {
-      case "1":
-        block1.innerHTML = firstLevelData.tableView;
-        block3Code.textContent = firstLevelData.htmlViewerContent;
-        break;
-      case "2":
-        block1.innerHTML = secondLevelData.tableView;
-        block3Code.textContent = secondLevelData.htmlViewerContent;
-        break;
-      case "3":
-        block1.innerHTML = thirdLevelData.tableView;
-        block3Code.textContent = thirdLevelData.htmlViewerContent;
-        break;
-      case "4":
-        block1.innerHTML = forthLevelData.tableView;
-        block3Code.textContent = forthLevelData.htmlViewerContent;
-        break;
-      case "5":
-        block1.innerHTML = fifthLevelData.tableView;
-        block3Code.textContent = fifthLevelData.htmlViewerContent;
-        break;
-      case "6":
-        block1.innerHTML = sixthLevelData.tableView;
-        block3Code.textContent = sixthLevelData.htmlViewerContent;
-        break;
-      case "7":
-        block1.innerHTML = seventhLevelData.tableView;
-        block3Code.textContent = seventhLevelData.htmlViewerContent;
-        break;
-      case "8":
-        block1.innerHTML = eighthLevelData.tableView;
-        block3Code.textContent = eighthLevelData.htmlViewerContent;
-        break;
-      case "9":
-        block1.innerHTML = ninthLevelData.tableView;
-        block3Code.textContent = ninthLevelData.htmlViewerContent;
-        break;
-      case "10":
-        block1.innerHTML = tenthLevelData.tableView;
-        block3Code.textContent = tenthLevelData.htmlViewerContent;
-        break;
-    }
-  });
-}
-export let clickedLevel = clickLevel();
 
 //LEVELS
 
