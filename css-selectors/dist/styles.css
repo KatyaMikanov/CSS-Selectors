@@ -353,12 +353,60 @@ body {
     display: inline-flex;
 }
 
-.block_2 {
-    width: 50%;
-}
 
 .block_3 {
     font-size: 20px;
     color: rgb(41, 242, 58);
     width: 50%;
+}
+
+/* Block 2 */
+.block_2 {
+    width: 50%;
+}
+
+.block2Editor {
+    border-bottom: solid 2px rgb(75 74 74);
+    display: flex;
+    justify-content: space-between;
+    background-color: rgb(48, 47, 47);
+    padding: 0 10px;
+}
+
+.block2Form {
+    display: flex;
+    justify-content: space-between;
+    background-color: aliceblue;
+}
+
+.titleSection2 {
+    font-size: 16px;
+    color: rgb(179, 180, 179);
+}
+
+.block2WithNumbers {
+    background-color: rgb(226 226 226);
+    color: #77736d;
+}
+
+.input {
+    display: block;
+    width: 80%;
+    height: 30px;
+    background-color: rgb(207 231 238);
+    margin: 7px 15px 0 10px;
+    border: none;
+}
+
+.input {
+    animation-name: animationPlate;
+    animation-iteration-count: infinite;
+    animation-timing-function: cubic-bezier(1.0,0,0,1.0);
+    animation-duration: 0.5s;
+}
+
+.button {
+    height: 30px;
+    margin: 7px 5px 0;
+    box-shadow: 4px 4px 4px #a4a4a4;
 }
