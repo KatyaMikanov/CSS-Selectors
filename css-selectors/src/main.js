@@ -5,57 +5,58 @@ const levelHandler = (nextLevel) => {
   const block3Code = document.querySelector(".code");
   const currentLevelElement = document.getElementById(`level_${nextLevel}`);
 
-  //currentLevelElement.innerHTML = "selected " + nextLevel;
   currentLevelElement.classList.add("selected");
   const block4All = document.querySelector(".block4");
   for (const child of block4All.children) {
     if (nextLevel !== child.innerHTML.slice(-1)) {
-      child.classList.remove("selected");
+      child?.classList?.remove("selected");
     }
   }
 
   switch (nextLevel) {
     case "1":
       block1.innerHTML = firstLevelData.tableView;
-      block3Code.textContent = firstLevelData.htmlViewerContent;
+      block3Code.innerHTML = firstLevelData.htmlViewerContent;
       break;
     case "2":
       block1.innerHTML = secondLevelData.tableView;
-      block3Code.textContent = secondLevelData.htmlViewerContent;
+      block3Code.innerHTML = secondLevelData.htmlViewerContent;
       break;
     case "3":
       block1.innerHTML = thirdLevelData.tableView;
-      block3Code.textContent = thirdLevelData.htmlViewerContent;
+      block3Code.innerHTML = thirdLevelData.htmlViewerContent;
       break;
     case "4":
       block1.innerHTML = forthLevelData.tableView;
-      block3Code.textContent = forthLevelData.htmlViewerContent;
+      block3Code.innerHTML = forthLevelData.htmlViewerContent;
       break;
     case "5":
       block1.innerHTML = fifthLevelData.tableView;
-      block3Code.textContent = fifthLevelData.htmlViewerContent;
+      block3Code.innerHTML = fifthLevelData.htmlViewerContent;
       break;
     case "6":
       block1.innerHTML = sixthLevelData.tableView;
-      block3Code.textContent = sixthLevelData.htmlViewerContent;
+      block3Code.innerHTML = sixthLevelData.htmlViewerContent;
       break;
     case "7":
       block1.innerHTML = seventhLevelData.tableView;
-      block3Code.textContent = seventhLevelData.htmlViewerContent;
+      block3Code.innerHTML = seventhLevelData.htmlViewerContent;
       break;
     case "8":
       block1.innerHTML = eighthLevelData.tableView;
-      block3Code.textContent = eighthLevelData.htmlViewerContent;
+      block3Code.innerHTML = eighthLevelData.htmlViewerContent;
       break;
     case "9":
       block1.innerHTML = ninthLevelData.tableView;
-      block3Code.textContent = ninthLevelData.htmlViewerContent;
+      block3Code.innerHTML = ninthLevelData.htmlViewerContent;
       break;
     case "10":
       block1.innerHTML = tenthLevelData.tableView;
-      block3Code.textContent = tenthLevelData.htmlViewerContent;
+      block3Code.innerHTML = tenthLevelData.htmlViewerContent;
       break;
   }
+
+  mouseEventListener();
 };
 
 const clickLevelListener = () => {
@@ -92,10 +93,13 @@ const clickEnterListener = () => {
     const currentNumberLevel = sessionStorage.getItem(levelKey);
     const currentLevel = document.getElementById(`level_${currentNumberLevel}`);
     const input = document.querySelector(".input");
-    if (input.value === selectors[currentNumberLevel - 1]) {
+    if (input.value === selectors[Number(currentNumberLevel) - 1]) {
       currentLevel.classList.remove("red");
       currentLevel.classList.add("green");
       input.value = "";
+      const next = `${Number(currentNumberLevel) + 1}`;
+      sessionStorage.setItem(levelKey, next);
+      levelHandler(next);
     } else {
       currentLevel.classList.remove("green");
       currentLevel.classList.add("red");
@@ -110,6 +114,7 @@ window.addEventListener("DOMContentLoaded", (event) => {
   levelHandler(level);
   clickLevelListener();
   clickEnterListener();
+  mouseEventListener();
 });
 
 //function for creating DOM element
@@ -127,15 +132,6 @@ export function newElement(options) {
   }
   return el;
 }
-
-//CREATING wrapper for Block_4
-
-// export const wrapper = document.querySelector(".wrapper");
-// export let block4 = newElement({
-//   tag: "div",
-//   params: { classList: ["block4"], textContent: "Level" },
-//   parent: wrapper,
-// });
 
 const block4 = document.querySelector(".block4");
 //create 10 levels in Block_4
@@ -155,6 +151,26 @@ function getArr() {
 }
 getArr();
 
+const mouseEventListener = () => {
+  const codeTags = document.querySelectorAll(".highlight-on-hover");
+  codeTags.forEach((codeTag) => {
+    // Get all the span elements inside the code tag
+    const spanElements = codeTag.querySelectorAll("span");
+
+    spanElements.forEach((span) => {
+      span.addEventListener("mouseover", () => {
+        // Add the "code-highlight" class to the individual span on mouseover
+        span.classList.add("code-highlight");
+      });
+
+      span.addEventListener("mouseout", () => {
+        // Remove the "code-highlight" class from the individual span on mouseout
+        span.classList.remove("code-highlight");
+      });
+    });
+  });
+};
+
 //create BUTTON "Reset Progress"
 export let buttonBlock4 = newElement({
   tag: "button",
@@ -166,21 +182,24 @@ export let buttonBlock4 = newElement({
 
 const firstLevelData = {
   validation: () => {},
-  htmlViewerContent: '<div class = "table" /><plate /></div>',
+  htmlViewerContent:
+    '<span>&lt;div class="table"&gt;</span>\r\n<span>&lt;plate /&gt;</span>\r\n<span>&lt;/div&gt;</span>',
   tableView:
     '<div class="block1ForLevel1"><img src="./images/table.png" class="tableLevel1"><img src="./images/plate.png" class="plateLevel1"></div>',
 };
 
 const secondLevelData = {
   validation: () => {},
-  htmlViewerContent: '<div class = "table" /><plate /><plate /></div>',
+  htmlViewerContent:
+    '<span>&lt;div class="table"&gt;</span>\r\n<span>&lt;plate /&gt;</span>\r\n<span>&lt;plate /&gt;</span>\r\n<span>&lt;/div&gt;</span>',
   tableView:
     '<div class="block1ForLevel1"><img src="./images/table.png" class="tableLevel1"><img src="./images/plate.png" class="plateLevel1"><img src="./images/plate.png" class="plateLevel2"></div>',
 };
 
 const thirdLevelData = {
   validation: () => {},
-  htmlViewerContent: '<div class = "table" /><plate /><apple /></div>',
+  htmlViewerContent:
+    '<span>&lt;div class="table"&gt;</span>\r\n<span>&lt;plate /&gt;</span>\r\n<span>&lt;apple /&gt;</span>\r\n<span>&lt;/div&gt;</span>',
   tableView:
     '<div class="block1ForLevel1"><img src="./images/table.png" class="tableLevel1"><img src="./images/plate.png" class="plateLevel3"><img src="./images/apple.png" class="appleLevel3"></div>',
 };
@@ -188,7 +207,7 @@ const thirdLevelData = {
 const forthLevelData = {
   validation: () => {},
   htmlViewerContent:
-    '<div class = "table" /><plate class="plate"/><apple class="apple"/></div>',
+    '<span>&lt;div class="table"&gt;</span>\r\n<span>&lt;plate class="plate"/&gt;</span>\r\n<span>&lt;apple class="apple"/&gt;</span>\r\n<span>&lt;/div&gt;</span>',
   tableView:
     '<div class="block1ForLevel1"><img src="./images/table.png" class="tableLevel1"><img src="./images/plate.png" class="plateLevel4"><img src="./images/apple.png" class="appleLevel4"></div>',
 };
@@ -196,7 +215,7 @@ const forthLevelData = {
 const fifthLevelData = {
   validation: () => {},
   htmlViewerContent:
-    '<div class = "table" /><plate id="plate"/><apple class="apple"/></div>',
+    '<span>&lt;div class="table"&gt;</span>\r\n<span>&lt;plate id="plate"/&gt;</span>\r\n<span>&lt;apple class="apple"/&gt;</span>\r\n<span>&lt;/div&gt;</span>',
   tableView:
     '<div class="block1ForLevel1"><img src="./images/table.png" class="tableLevel1"><img src="./images/plate.png" class="plateLevel1"><img src="./images/apple.png" class="appleLevel5"></div>',
 };
@@ -204,7 +223,7 @@ const fifthLevelData = {
 const sixthLevelData = {
   validation: () => {},
   htmlViewerContent:
-    '<div class = "table" /><plate class="plate"/><apple class="apple"/><pear class="pear"/></div>',
+    '<span>&lt;div class="table"&gt;</span>\r\n<span>&lt;plate class="plate"/&gt;</span>\r\n<span>&lt;apple class="apple"/&gt;</span>\r\n<span>&lt;pear class="pear"/&gt;</span>\r\n<span>&lt;/div&gt;</span>',
   tableView:
     '<div class="block1ForLevel1"><img src="./images/table.png" class="tableLevel1"><img src="./images/plate.png" class="plateLevel6"><img src="./images/apple.png" class="appleLevel6"><img src="./images/pear.png" class="pearLevel6"></div>',
 };
@@ -212,7 +231,7 @@ const sixthLevelData = {
 const seventhLevelData = {
   validation: () => {},
   htmlViewerContent:
-    '<div class = "table" /><plate class="plate" /><apple class="apple"/><plate class="plate" /><pear class="pear"/></div>',
+    '<span>&lt;div class="table"&gt;</span>\r\n<span>&lt;plate class="plate"/&gt;</span>\r\n<span>&lt;apple class="apple"/&gt;</span>\r\n<span>&lt;plate class="plate"/&gt;</span>\r\n<span>&lt;pear class="pear"/&gt;</span>\r\n<span>&lt;/div&gt;</span>',
   tableView:
     '<div class="block1ForLevel1"><img src="./images/table.png" class="tableLevel1"><img src="./images/plate.png" class="plateLevel7"><img src="./images/apple.png" class="appleLevel7"><img src="./images/plate.png" class="plate2Level7"><img src="./images/pear.png" class="pearLevel7"></div>',
 };
@@ -220,7 +239,7 @@ const seventhLevelData = {
 const eighthLevelData = {
   validation: () => {},
   htmlViewerContent:
-    '<div class = "table"><plate class="plate" /><apple id="apple"/><plate class="plate" /><pear id="pear"/></div>',
+    '<span>&lt;div class="table"&gt;</span>\r\n<span>&lt;plate class="plate"/&gt;</span>\r\n<span>&lt;apple class="apple"/&gt;</span>\r\n<span>&lt;plate class="plate"/&gt;</span>\r\n<span>&lt;pear class="pear"/&gt;</span>\r\n<span>&lt;/div&gt;</span>',
   tableView:
     '<div class="block1ForLevel1"><img src="./images/table.png" class="tableLevel1"><img src="./images/plate.png" class="plateLevel7"><img src="./images/apple.png" class="appleLevel8"><img src="./images/plate.png" class="plate2Level7"><img src="./images/pear.png" class="pearLevel8"></div>',
 };
@@ -228,7 +247,7 @@ const eighthLevelData = {
 const ninthLevelData = {
   validation: () => {},
   htmlViewerContent:
-    '<div class = "table"><plate class="plate" /><apple class="fruits" id="apple"/><plate class="plate" /><pear class="fruits" id="pear"/></div>',
+    '<span>&lt;div class="table"&gt;</span>\r\n<span>&lt;plate class="plate"/&gt;</span>\r\n<span>&lt;apple class="apple" id="apple/&gt;</span>\r\n<span>&lt;plate class="plate"/&gt;</span>\r\n<span>&lt;pear class="pear" id="pear/&gt;</span>\r\n<span>&lt;/div&gt;</span>',
   tableView:
     '<div class="block1ForLevel1"><img src="./images/table.png" class="tableLevel1"><img src="./images/plate.png" class="plateLevel7"><img src="./images/apple.png" class="appleLevel9"><img src="./images/plate.png" class="plate2Level7"><img src="./images/pear.png" class="pearLevel9"></div>',
 };
@@ -236,7 +255,7 @@ const ninthLevelData = {
 const tenthLevelData = {
   validation: () => {},
   htmlViewerContent:
-    '<div class = "table" /><plate class="plate" id="plate-first" /><apple id="apple"/><plate class="plate" id="plate-second" /><pear id="pear"/></div>',
+    '<span>&lt;div class="table"&gt;</span>\r\n<span>&lt;plate class="plate" id="plate-first"/&gt;</span>\r\n<span>&lt;apple id="apple/&gt;</span>\r\n<span>&lt;plate class="plate" id="plate-second"/&gt;</span>\r\n<span>&lt;pear id="pear/&gt;</span>\r\n<span>&lt;/div&gt;</span>',
   tableView:
     '<div class="block1ForLevel1"><img src="./images/table.png" class="tableLevel1"><img src="./images/plate.png" class="plateLevel7"><img src="./images/plate.png" class="plate2Level10"><img src="./images/pear.png" class="pearLevel10"></div>',
 };

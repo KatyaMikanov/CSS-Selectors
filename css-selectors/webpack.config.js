@@ -1,9 +1,12 @@
 const HtmlWebpackPlugin = require("html-webpack-plugin");
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
+const CopyPlugin = require("copy-webpack-plugin");
 const path = require("path");
 
 module.exports = {
-  entry: path.join(__dirname, "src", "index.js"),
+  entry: {
+    main: "./src/index.js",
+  },
   output: {
     path: path.join(__dirname, "dist"),
     filename: "index.[contenthash].js",
@@ -35,6 +38,14 @@ module.exports = {
     }),
     new MiniCssExtractPlugin({
       filename: "styles.css",
+    }),
+    new CopyPlugin({
+      patterns: [
+        {
+          from: path.join(__dirname, "src", "assets", "hightlight"),
+          to: path.join(__dirname, "dist", "hightlight"), // The destination folder inside the "dist" directory
+        },
+      ],
     }),
   ],
   devServer: {

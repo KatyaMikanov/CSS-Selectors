@@ -352,19 +352,44 @@ body {
     width: 4%;
 }
 
-.code {
-    margin: 0;
-    padding: 10px;
-    font-size: 18px;
-    display: inline-flex;
-}
-
 
 .block_3 {
     font-size: 20px;
     color: rgb(41, 242, 58);
     width: 50%;
 }
+
+
+
+.pre_code {
+    margin: 0;
+    margin: 0;
+    padding: 10px;
+    font-size: 18px;
+    display: inline-flex;
+    white-space: break-spaces;
+}
+/* code:hover {
+    font-weight: bold;
+    /* background-color: #f8f8f8; Change this to the desired hover background color 
+    transition: background-color 0.3s; /* Optional: Add a smooth transition effect 
+  } */
+
+/* Add any desired styling for your code tags here */
+code {
+    background-color: #f3f3f3;
+    padding: 5px;
+    border-radius: 4px;
+    font-family: 'Courier New', monospace;
+  }
+  
+  /* Add the highlighting effect */
+  .code-highlight {
+    font-weight: bold; /* Change to the desired highlight color */
+    cursor: pointer;
+  }
+
+
 
 /* Block 2 */
 .block_2 {
@@ -429,3 +454,6 @@ body {
     font-size: 28px;
     background-color: rgb(34, 34, 34);
 }
+
+
+
